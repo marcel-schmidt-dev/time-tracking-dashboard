@@ -38,7 +38,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +65,7 @@ body {
 }
 
 .item-1>div:first-child {
-    padding: 37px 32px 80px 32px;
+    padding: 37px 32px 50px 32px;
     background-color: #5747EA;
     border-radius: 15px;
     margin-bottom: 26px;
@@ -95,7 +95,7 @@ body {
     display: block;
 }
 
-.item-1 div:last-child {
+.item-1>div:last-child {
     display: flex;
     flex-direction: column;
     gap: 21px;
@@ -108,17 +108,22 @@ body {
     margin-left: 32px;
     cursor: pointer;
     width: min-content;
+    transition: color .3s ease-in-out;
+}
+
+.item-1>div:not(:first-child) span:hover {
+    color: #fff;
 }
 
 .item-1>div:not(:first-child) span.active {
     color: #fff;
 }
 
-.item-1 div:not(:first-child) {
+.item-1>div:not(:first-child) {
     margin-bottom: 21px;
 }
 
-.item-1 div:last-child {
+.item-1>div:last-child {
     margin-bottom: 32px;
 }
 
@@ -134,6 +139,11 @@ body {
     margin-top: 45px;
     padding: 30px;
     height: calc(100% - 45px);
+    transition: background-color .3s ease-in-out;
+}
+
+.item>div:hover {
+    background-color: #33397A;
 }
 
 .item .title {
@@ -188,4 +198,49 @@ body {
 .item-7 {
     background-color: #F1C75B;
     background-image: url('./images/icon-self-care.svg');
+}
+
+@media (max-width: 376px) {
+    .grid-container {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto auto auto auto auto auto;
+        padding: 24px;
+    }
+
+    .item-1 {
+        overflow: visible;
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .item-1>div:first-child {
+        display: flex;
+    }
+
+    .item-1 img {
+        width: 64px;
+        height: 64px;
+        margin: 0;
+        margin-right: 20px;
+    }
+
+    .item-1 h1 {
+        font-size: 24px;
+    }
+
+    .item-1>div:first-child {
+        padding: 35px;
+        margin: 0;
+    }
+
+    .item-1>div:last-child {
+        margin: 0;
+        flex-direction: row;
+        padding: 25px 0;
+        justify-content: space-evenly;
+    }
+
+    .item-1>div:not(:first-child) span {
+        margin: 0;
+    }
 }

@@ -1,6 +1,6 @@
 import data from './data.json' with { type: 'json' };
 const items = document.querySelectorAll('.item');
-const buttons = document.querySelectorAll('.item-1 div:last-child span')
+const buttons = document.querySelectorAll('.item-1>div:last-child span');
 
 setData('weekly', buttons[1]);
 
